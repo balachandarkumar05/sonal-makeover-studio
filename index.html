@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sonal Makeover Studio — Makeup & Hair Styling</title>
+  <meta name="description" content="Bridal, party, and photoshoot makeup & hair styling. Natural, long‑lasting looks. Book a trial today!" />
+  <meta property="og:title" content="Sonal Makeover Studio — Makeup & Hair Styling" />
+  <meta property="og:description" content="Bridal, party, and photoshoot makeup & hair styling. Natural, long‑lasting looks. Book a trial today!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512203492609-8f9f5d7f2a2e?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0e0e10; /* charcoal */
+      --card: #16161a;
+      --muted: #a1a1aa;
+      --brand: #eab308; /* warm gold */
+      --brand-2: #f472b6; /* pink accent */
+      --text: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;color:var(--text);background:linear-gradient(180deg,#0b0b0d, #121217 40%, #0d0d10)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{width:min(1120px, 94%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(14,14,16,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;box-shadow:var(--shadow)}
+    .nav a{padding:8px 12px;border-radius:999px;color:#e7e7ea}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+    .cta{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;font-weight:600;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:64px 0 48px}
+    .hero h1{font-size:clamp(28px,6vw,56px);line-height:1.05;margin:0 0 14px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+    .chip{padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#ddd}
+    .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.06);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-media{position:relative;border-radius:var(--radius);overflow:hidden}
+    .hero-media img{aspect-ratio:4/3;object-fit:cover;}
+
+    /* Sections */
+    section{padding:48px 0}
+    h2{font-size:clamp(22px,4vw,36px);margin:0 0 24px}
+    .sub{color:var(--muted);margin-top:-12px;margin-bottom:22px}
+
+    .grid{display:grid;gap:18px}
+    @media(min-width:720px){
+      .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+      .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    }
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .price{font-weight:700;font-size:20px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    @media(min-width:800px){.gallery{grid-template-columns:repeat(4,1fr)}}
+    .gallery img{border-radius:14px;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(255,255,255,.08)}
+
+    /* Testimonials */
+    .quote{font-style:italic;color:#e7e7ea}
+    .avatar{display:flex;align-items:center;gap:12px;margin-top:12px}
+    .avatar img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.18)}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, textarea, select{width:100%;padding:12px 14px;border-radius:12px;background:#0f0f12;border:1px solid rgba(255,255,255,.12);color:#f5f5f7}
+    textarea{min-height:110px}
+    button{padding:12px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;box-shadow:var(--shadow)}
+
+    /* Footer */
+    footer{padding:28px 0 48px;color:#c7c7cc}
+    .footer-grid{display:grid;gap:18px}
+    @media(min-width:720px){.footer-grid{grid-template-columns:1.5fr 1fr 1fr}}
+    .mini{font-size:12px;color:#9a9aa3}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;right:16px;bottom:16px;background:#25d366;color:#111;padding:12px 14px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Sonal Makeover Studio home">
+        <span class="logo">SMS</span>
+        <span>Sonal Makeover Studio</span>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="cta">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container" id="home">
+      <div>
+        <h1>Makeup & Hair Styling that feels like <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">you</span></h1>
+        <p>Bridal, party, and photoshoot looks that enhance your features — long‑lasting, camera‑ready, and comfortable.</p>
+        <div class="chips">
+          <span class="chip">Bridal HD / Airbrush</span>
+          <span class="chip">Party & Reception</span>
+          <span class="chip">Sangeet / Haldi</span>
+          <span class="chip">Photoshoot / Editorial</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="#contact">Book a Trial</a>
+          <a class="chip" href="https://wa.me/919999999999?text=Hi%20Sonal%2C%20I%27d%20like%20to%20book%20a%20makeup%20slot" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+        <p class="sub">Pondicherry • Chennai • Bangalore • On‑location available</p>
+      </div>
+      <div class="hero-card hero-media">
+        <img alt="Bridal makeup closeup" src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" />
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="sub">Clean, elegant, and timeless looks for every occasion.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Bridal Makeup</h3>
+            <p>HD or Airbrush base, soft glam eyes, premium lashes, and customized hair styling.</p>
+          </div>
+          <div class="card">
+            <h3>Party / Reception</h3>
+            <p>Fresh dewy finish with long‑wear products. Perfect for day or night events.</p>
+          </div>
+          <div class="card">
+            <h3>Photoshoot / Editorial</h3>
+            <p>Camera‑ready looks for pre‑wedding, maternity, or portfolio shoots.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages">
+      <div class="container">
+        <h2>Popular Packages</h2>
+        <p class="sub">Transparent pricing. Customize any package to suit your event.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Party Look</h3>
+            <p class="price">₹4,999</p>
+            <ul style="margin:10px 0 0 18px; color:#d5d5d8">
+              <li>HD base & natural glam</li>
+              <li>Basic hairstyle</li>
+              <li>Premium lashes</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Bridal Signature</h3>
+            <p class="price">₹14,999</p>
+            <ul style="margin:10px 0 0 18px; color:#d5d5d8">
+              <li>HD / Airbrush base</li>
+              <li>Advanced hairstyle & draping</li>
+              <li>Touch‑up kit</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Bridal + Reception</h3>
+            <p class="price">₹24,999</p>
+            <ul style="margin:10px 0 0 18px; color:#d5d5d8">
+              <li>Two complete looks</li>
+              <li>On‑site assistant</li>
+              <li>Trial session</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <div class="container">
+        <h2>Gallery</h2>
+        <p class="sub">A few recent transformations.</p>
+        <div class="gallery">
+          <img alt="Makeup look 1" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop">
+          <img alt="Makeup look 2" src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop">
+          <img alt="Hair styling" src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=800&auto=format&fit=crop">
+          <img alt="Bridal detail" src="https://images.unsplash.com/photo-1588159343745-445ae0b16383?q=80&w=800&auto=format&fit=crop">
+          <img alt="Sangeet look" src="https://images.unsplash.com/photo-1542381425-92057b6ad1b4?q=80&w=800&auto=format&fit=crop">
+          <img alt="Soft glam" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop">
+          <img alt="Reception glam" src="https://images.unsplash.com/photo-1512203492609-8f9f5d7f2a2e?q=80&w=800&auto=format&fit=crop">
+          <img alt="Classic bun" src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?q=80&w=800&auto=format&fit=crop">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews">
+      <div class="container">
+        <h2>Client Love</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <p class="quote">“The bridal look stayed flawless till vidai. Exactly the subtle glam I wanted!”</p>
+            <div class="avatar">
+              <img src="https://i.pravatar.cc/100?img=15" alt="Client A">
+              <div><strong>Ritika</strong><br><span class="mini">Bridal Makeup</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <p class="quote">“Super hygienic, on time, and so patient. My photos came out amazing.”</p>
+            <div class="avatar">
+              <img src="https://i.pravatar.cc/100?img=32" alt="Client B">
+              <div><strong>Sneha</strong><br><span class="mini">Party Look</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <p class="quote">“Booked for a shoot—makeup looked natural to the eye and perfect on camera.”</p>
+            <div class="avatar">
+              <img src="https://i.pravatar.cc/100?img=5" alt="Client C">
+              <div><strong>Ananya</strong><br><span class="mini">Photoshoot</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Enquiry & Bookings</h2>
+        <p class="sub">Share your event details and we’ll get back within a few hours.</p>
+        <div class="grid cols-2">
+          <form onsubmit="return handleSubmit(event)">
+            <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+              <input required type="text" name="name" placeholder="Your name" />
+              <input required type="tel" name="phone" placeholder="Phone / WhatsApp" />
+            </div>
+            <input required type="email" name="email" placeholder="Email" />
+            <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+              <input type="date" name="date" />
+              <select name="service">
+                <option value="">Select service</option>
+                <option>Bridal Makeup</option>
+                <option>Reception / Party</option>
+                <option>Photoshoot</option>
+                <option>Hairstyling only</option>
+              </select>
+            </div>
+            <textarea name="message" placeholder="Tell us about your look, venue & timing"></textarea>
+            <button class="btn-primary" type="submit">Send Enquiry</button>
+            <p class="mini">By submitting, you agree to be contacted on WhatsApp/phone.</p>
+          </form>
+          <div class="card">
+            <h3>Studio Hours</h3>
+            <p class="mini">Mon–Sun • 8:00 AM – 9:00 PM</p>
+            <h3 style="margin-top:18px">Contact</h3>
+            <p><strong>📞</strong> <a href="tel:+919999999999">+91 99999 99999</a><br>
+               <strong>📧</strong> <a href="mailto:hello@sonalmakeoverstudio.com">hello@sonalmakeoverstudio.com</a></p>
+            <h3 style="margin-top:18px">Service Locations</h3>
+            <p class="mini">Pondicherry • Chennai • Bangalore • Travel on request</p>
+            <h3 style="margin-top:18px">Find us</h3>
+            <p class="mini">Add your Google Map link or exact address here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:8px">
+          <span class="logo">SMS</span>
+          <span>Sonal Makeover Studio</span>
+        </div>
+        <p class="mini">© <span id="year"></span> Sonal Makeover Studio. All rights reserved.</p>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <p class="mini"><a href="#services">Services</a> • <a href="#packages">Packages</a> • <a href="#gallery">Gallery</a> • <a href="#contact">Book</a></p>
+      </div>
+      <div>
+        <strong>Follow</strong>
+        <p class="mini"><a href="#">Instagram</a> • <a href="#">Facebook</a> • <a href="#">YouTube</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/919999999999?text=Hi%20Sonal%2C%20I%27d%20like%20to%20book%20a%20makeup%20slot" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+  <script>
+    const y = document.getElementById('year'); y.textContent = new Date().getFullYear();
+    function handleSubmit(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      const subject = encodeURIComponent("Makeup/Hair Enquiry – " + (data.name||''));
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nDate: ${data.date||'-'}\nService: ${data.service||'-'}\nMessage: ${data.message||'-'}`
+      );
+      window.location.href = `mailto:hello@sonalmakeoverstudio.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
+</body>
+</html>
