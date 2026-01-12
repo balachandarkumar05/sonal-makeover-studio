@@ -364,14 +364,14 @@
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a class="cta" href="#contact">Book a Trial</a>
           <a class="chip"
-            href="https://wa.me/919999999999?text=Hi%20Sonal%2C%20I%27d%20like%20to%20book%20a%20makeup%20slot"
+            href="https://wa.me/917420869334?text=Hi%20Sonal%2C%20I%27d%20like%20to%20book%20a%20makeup%20slot"
             target="_blank" rel="noopener">Chat on WhatsApp</a>
         </div>
         <p class="sub">Pondicherry • Chennai • Bangalore • On‑location available</p>
       </div>
       <div class="hero-card hero-media">
         <img alt="Bridal makeup closeup"
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" />
+          src="images/display/NI_display_01.jpg"/>
       </div>
     </section>
 
@@ -440,22 +440,11 @@
         <h2>Gallery</h2>
         <p class="sub">A few recent transformations.</p>
         <div class="gallery">
-          <img alt="Makeup look 1"
-            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop">
-          <img alt="Makeup look 2"
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop">
-          <img alt="Hair styling"
-            src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=800&auto=format&fit=crop">
-          <img alt="Bridal detail"
-            src="https://images.unsplash.com/photo-1588159343745-445ae0b16383?q=80&w=800&auto=format&fit=crop">
-          <img alt="Sangeet look"
-            src="https://images.unsplash.com/photo-1542381425-92057b6ad1b4?q=80&w=800&auto=format&fit=crop">
-          <img alt="Soft glam"
-            src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop">
-          <img alt="Reception glam"
-            src="https://images.unsplash.com/photo-1512203492609-8f9f5d7f2a2e?q=80&w=800&auto=format&fit=crop">
-          <img alt="Classic bun"
-            src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?q=80&w=800&auto=format&fit=crop">
+          <img src="images/gallery/SI_Bridal_01.jpg" alt="Bridal Makeup" loading="lazy" decoding="async">
+          <img alt="South Indian reception look" src="images/gallery/SI_Reception_01.jpg" loading="lazy" decoding="async">
+          <img alt="North Indian bridal look" src="images/gallery/NI_Bridal_01.jpg" loading="lazy" decoding="async">
+          <img alt="Christian bridal look" src="images/gallery/CH_Bridal_01.jpg" loading="lazy" decoding="async">
+          <img alt="Muslim bridal look" src="images/gallery/MU_Bridal_01.jpg" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -538,7 +527,9 @@
           <p id="status"></p> -->
 
           <iframe name="hidden_iframe" style="display:none;"></iframe>
-          <form id="enquiryForm" action="https://script.google.com/macros/s/AKfycbwq5-XGOzLVdPX2hAYMXKblAucBQxSu7etrk-QE4oYCpRJQ0M2g1pe222XVgp4LxkgoDA/exec" method="POST" target="hidden_iframe">
+          <form id="enquiryForm"
+            action="https://script.google.com/macros/s/AKfycbwq5-XGOzLVdPX2hAYMXKblAucBQxSu7etrk-QE4oYCpRJQ0M2g1pe222XVgp4LxkgoDA/exec"
+            method="POST" target="hidden_iframe">
             <input name="fullName" required />
             <input id="phone" name="phone" required />
             <input name="email" type="email" required />
@@ -555,12 +546,12 @@
             <input type="hidden" name="userAgent" />
             <!-- Honeypot (spam trap) -->
             <input type="text" name="company" autocomplete="off" tabindex="-1"
-       style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" />
+              style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" />
 
             <button type="submit">Send Enquiry</button>
+            <p id="status"></p>
           </form>
 
-          <p id="status"></p>
           <div class="card">
             <h3>Studio Hours</h3>
             <p class="mini">Mon–Sun • 10:30 AM – 9:00 PM</p>
@@ -663,26 +654,26 @@
     });
   </script> -->
   <script>
-  const form = document.getElementById("enquiryForm");
-  const statusEl = document.getElementById("status");
+    const form = document.getElementById("enquiryForm");
+    const statusEl = document.getElementById("status");
 
-  form.addEventListener("submit", () => {
-    statusEl.textContent = "Sending...";
+    form.addEventListener("submit", () => {
+      statusEl.textContent = "Sending...";
 
-    setTimeout(() => {
-      statusEl.textContent = "✅ Enquiry submitted! We’ll contact you soon.";
+      setTimeout(() => {
+        statusEl.textContent = "✅ Enquiry submitted! We’ll contact you soon.";
 
-      // // WhatsApp auto message (optional)
-      // const phone = (document.getElementById("phone")?.value || "").trim();
-      // const msg = encodeURIComponent("Thanks for your enquiry! We’ve received it and will contact you shortly.");
-      // if (/^\d{10}$/.test(phone)) {
-      //   window.open(`https://wa.me/91${phone}?text=${msg}`, "_blank");
-      // }
+        // // WhatsApp auto message (optional)
+        // const phone = (document.getElementById("phone")?.value || "").trim();
+        // const msg = encodeURIComponent("Thanks for your enquiry! We’ve received it and will contact you shortly.");
+        // if (/^\d{10}$/.test(phone)) {
+        //   window.open(`https://wa.me/91${phone}?text=${msg}`, "_blank");
+        // }
 
-      form.reset();
-    }, 800);
-  });
-</script>
+        form.reset();
+      }, 800);
+    });
+  </script>
 
 
 </body>
