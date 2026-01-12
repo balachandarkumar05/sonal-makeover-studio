@@ -544,9 +544,12 @@
             <input name="email" type="email" required />
             <input name="eventDate" type="date" required />
             <select name="service" required>
+              <option value="">Select service</option>
               <option value="Bridal Makeup">Bridal Makeup</option>
+              <option value="Party Makeup">Party Makeup</option>
+              <option value="Engagement Makeup">Engagement Makeup</option>
             </select>
-            <textarea name="message" required></textarea>
+            <textarea name="message" placeholder="Event details" required></textarea>
 
             <input type="hidden" name="page" />
             <input type="hidden" name="userAgent" />
